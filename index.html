@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PoseNet</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+
+  <body>
+    <div id="container">
+      <div id="video-container" hidden>
+        <video id="video" width="640" height="480"></video>
+      </div>
+      <div id="canvas-container">
+        <canvas id="canvas" width="640" height="480"></canvas>
+      </div>
+      <div id="controls">
+        <!-- Checkbox para cada punto clave del cuerpo -->
+        <label><input type="checkbox" class="keypoint" value="nose" checked />Nariz</label>
+        <label><input type="checkbox" class="keypoint" value="leftEye" checked />Ojo Izquierdo</label>
+        <label><input type="checkbox" class="keypoint" value="rightEye" checked />Ojo Derecho</label>
+        <label><input type="checkbox" class="keypoint" value="leftEar" checked />Oreja Izquierda</label>
+        <label><input type="checkbox" class="keypoint" value="rightEar" checked />Oreja Derecha</label>
+        <label><input type="checkbox" class="keypoint" value="leftShoulder" checked />Hombro Izquierdo</label>
+        <label><input type="checkbox" class="keypoint" value="rightShoulder" checked />Hombro Derecho</label>
+        <label><input type="checkbox" class="keypoint" value="leftElbow" checked />Codo Izquierdo</label>
+        <label><input type="checkbox" class="keypoint" value="rightElbow" checked />Codo Derecho</label>
+        <label><input type="checkbox" class="keypoint" value="leftWrist" checked />Muñeca Izquierda</label>
+        <label><input type="checkbox" class="keypoint" value="rightWrist" checked />Muñeca Derecha</label>
+        <label><input type="checkbox" class="keypoint" value="leftHip" checked />Cadera Izquierda</label>
+        <label><input type="checkbox" class="keypoint" value="rightHip" checked />Cadera Derecha</label>
+        <label><input type="checkbox" class="keypoint" value="leftKnee" checked />Rodilla Izquierda</label>
+        <label><input type="checkbox" class="keypoint" value="rightKnee" checked />Rodilla Derecha</label>
+        <label><input type="checkbox" class="keypoint" value="leftAnkle" checked />Tobillo Izquierdo</label>
+        <label><input type="checkbox" class="keypoint" value="rightAnkle" checked />Tobillo Derecho</label>
+        
+        <div class="buttons-container">
+          <button id="select-all" class="action-button">Seleccionar Todo</button>
+          <button id="deselect-all" class="action-button">Quitar Todo</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Inclusión de TensorFlow.js desde un CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <!-- Inclusión del modelo PoseNet desde un CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/posenet"></script>
+    <!-- Archivo JavaScript personalizado para la lógica de la aplicación -->
+    <script src="script.js"></script>
+  </body>
+</html>
